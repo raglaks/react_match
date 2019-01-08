@@ -1,21 +1,34 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Grid from './Grid';
+import eye1 from './images/eye1.jpg';
+import eye2 from './images/eye2.jpg';
+import eye3 from './images/eye3.jpg';
+import eye4 from './images/eye4.jpg';
+import eye5 from './images/eye5.jpg';
+import eye6 from './images/eye6.jpg';
+import eye7 from './images/eye7.jpg';
+import eye8 from './images/eye8.jpg';
+import eye9 from './images/eye9.jpg';
+import eye10 from './images/eye10.jpg';
+import eye11 from './images/eye11.jpg';
+import eye12 from './images/eye12.jpg';
 import './App.css';
 
 class App extends Component {
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
 
-          <p>
-            test test <strong>test</strong> test
-          </p>
-          
-        </header>
+    const pics = [{pic: eye1}, {pic: eye2}, {pic: eye3}, {pic: eye4}, {pic: eye5}, {pic: eye6}, {pic: eye7}, {pic: eye8}, {pic: eye9}, {pic: eye10}, {pic: eye11}, {pic: eye12}];
+
+    return (
+
+      <div className="App">
+      
+        <Grid imgData={pics}/>
+      
       </div>
+
     );
+
   }
 }
 
