@@ -1,14 +1,12 @@
-.App {
-  text-align: center;
-}
+
 
 .App-logo {
-  animation: App-logo-spin infinite 1s linear;
+  animation: App-logo-spin infinite 2s linear;
   /* height: 40vmin; */
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: palevioletred;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -29,4 +27,10 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+img.resize {
+  width:200px; 
+  height: 200px;
+  border-radius: 50%;
 }

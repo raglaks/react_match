@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import GridBody from './GridBody';
+import GridBodyUp from './GridBodyUp';
+import GridBodyMid from './GridBodyMid';
+import GridBodyLow from './GridBodyLow';
 
 class Grid extends Component {
 
@@ -11,8 +13,25 @@ class Grid extends Component {
 
             <table>
 
-                <GridBody imgData={imgData}/>
+                <tr>
 
+                    <GridBodyUp imgData={imgData}/>
+
+                </tr>
+
+                <tr>
+
+                    <GridBodyMid imgData={imgData}/>
+
+                </tr>
+
+                <tr>
+
+                    <GridBodyLow imgData={imgData}/>
+
+                </tr>
+
+                
             </table>
 
         )
