@@ -6,11 +6,24 @@ const GridBodyUp = props => {
 
         if (index <= 3) {
 
-            return (
+            if (index === 1 || index === 3) {
 
-                <td key={index}><img className="resize App-logo" src={row.pic} alt={index}></img></td>
+                return (
 
-            )
+                    <td key={index}><img className="resize anti" src={row.pic} alt={index}></img></td>
+    
+                )
+
+            } else {
+
+
+                return (
+
+                    <td key={index}><img className="resize clock" src={row.pic} alt={index}></img></td>
+    
+                )
+
+            }
 
         } 
 

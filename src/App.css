@@ -1,8 +1,10 @@
+.anti {
+  animation: anti infinite 1s linear;
 
+}
 
-.App-logo {
-  animation: App-logo-spin infinite 2s linear;
-  /* height: 40vmin; */
+.clock {
+  animation: clock infinite 1s linear;
 }
 
 .App-header {
@@ -10,7 +12,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: right;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
@@ -20,12 +22,21 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+@keyframes clock {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes anti {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
   }
 }
 

@@ -6,11 +6,23 @@ const GridBodyMid = props => {
 
         if (index >= 4 && index <= 7) {
 
-            return (
+            if (index === 4 || index === 6) {
 
-                <td key={index}><img className="resize App-logo" src={row.pic} alt={index}></img></td>
+                return (
 
-            )
+                    <td key={index}><img className="resize anti" src={row.pic} alt={index}></img></td>
+    
+                )
+
+            } else {
+
+                return (
+
+                    <td key={index}><img className="resize clock" src={row.pic} alt={index}></img></td>
+    
+                )
+
+            }
 
         }
 
