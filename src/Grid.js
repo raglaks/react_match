@@ -1,43 +1,24 @@
-import React, { Component } from 'react';
-import GridBodyUp from './GridBodyUp';
-import GridBodyMid from './GridBodyMid';
-import GridBodyLow from './GridBodyLow';
+import React, { Component } from "react";
+import GridBodyUp from "./GridBodyUp";
+import GridBodyMid from "./GridBodyMid";
+import GridBodyLow from "./GridBodyLow";
 
 class Grid extends Component {
+  render() {
+    const { imgData } = this.props;
 
-    render() {
+    return (
+      <table>
+        <tbody>
+          <GridBodyUp imgData={imgData} />
 
-        const {imgData} = this.props;
+          <GridBodyMid imgData={imgData} />
 
-        return (
-
-            <table>
-
-                <tr>
-
-                    <GridBodyUp imgData={imgData}/>
-
-                </tr>
-
-                <tr>
-
-                    <GridBodyMid imgData={imgData}/>
-
-                </tr>
-
-                <tr>
-
-                    <GridBodyLow imgData={imgData}/>
-
-                </tr>
-
-                
-            </table>
-
-        )
-
-    }
-
+          <GridBodyLow imgData={imgData} />
+        </tbody>
+      </table>
+    );
+  }
 }
 
 export default Grid;

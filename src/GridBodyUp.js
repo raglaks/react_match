@@ -10,7 +10,7 @@ const GridBodyUp = props => {
 
                 return (
 
-                    <td key={index}><img className="resize anti" src={row.pic} alt={index}></img></td>
+                    <td key={index}><img onClick={console.log("click")} className="resize anti" src={row.pic} alt={index}></img></td>
     
                 )
 
@@ -31,7 +31,7 @@ const GridBodyUp = props => {
 
     return (
 
-        <tbody>{rows}</tbody>
+        <tr>{rows}</tr>
 
     )
 

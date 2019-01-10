@@ -6,7 +6,7 @@ const GridBodyMid = props => {
 
         if (index >= 4 && index <= 7) {
 
-            if (index === 4 || index === 6) {
+            if (index === 5 || index === 7) {
 
                 return (
 
@@ -30,7 +30,7 @@ const GridBodyMid = props => {
 
     return (
 
-        <tbody>{rows}</tbody>
+        <tr>{rows}</tr>
 
     )
 

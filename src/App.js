@@ -15,15 +15,33 @@ import eye12 from './images/eye12.jpg';
 import './App.css';
 
 class App extends Component {
-  render() {
 
-    const pics = [{pic: eye1}, {pic: eye2}, {pic: eye3}, {pic: eye4}, {pic: eye5}, {pic: eye6}, {pic: eye7}, {pic: eye8}, {pic: eye9}, {pic: eye10}, {pic: eye11}, {pic: eye12}];
+  state = {
+
+    score: 0,
+
+    topScore: 0
+
+  };
+
+  pics = [{pic: eye1}, {pic: eye2}, {pic: eye3}, {pic: eye4}, {pic: eye5}, {pic: eye6}, {pic: eye7}, {pic: eye8}, {pic: eye9}, {pic: eye10}, {pic: eye11}, {pic: eye12}];
+
+  handleClick = event => {
+
+    event.preventDefault();
+
+    console.log(event);
+    //click={this.handleClick}
+
+  }
+
+  render() {
 
     return (
 
       <div className="App-header">
       
-        <Grid imgData={pics}/>
+        <Grid imgData={this.pics} />
       
       </div>
 
