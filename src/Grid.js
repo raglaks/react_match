@@ -6,15 +6,16 @@ import GridBodyLow from "./GridBodyLow";
 class Grid extends Component {
   render() {
     const { imgData } = this.props;
+    const { clickCheck } = this.props;
 
     return (
       <table>
         <tbody>
-          <GridBodyUp imgData={imgData} />
+          <GridBodyUp imgData={imgData} clickCheck={clickCheck}/>
 
-          <GridBodyMid imgData={imgData} />
+          <GridBodyMid imgData={imgData} clickCheck={clickCheck}/>
 
-          <GridBodyLow imgData={imgData} />
+          <GridBodyLow imgData={imgData} clickCheck={clickCheck}/>
         </tbody>
       </table>
     );

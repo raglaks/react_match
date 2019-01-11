@@ -18,10 +18,6 @@ body {
   justify-content: center;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes clock {
   from {
     transform: rotate(0deg);

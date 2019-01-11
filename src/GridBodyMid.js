@@ -10,7 +10,7 @@ const GridBodyMid = props => {
 
                 return (
 
-                    <td key={index}><img className="resize anti" src={row.pic} alt={index}></img></td>
+                    <td key={index}><img id={index} onClick={props.clickCheck} className="resize anti" src={row.pic} alt={index}></img></td>
     
                 )
 
@@ -18,13 +18,15 @@ const GridBodyMid = props => {
 
                 return (
 
-                    <td key={index}><img className="resize clock" src={row.pic} alt={index}></img></td>
+                    <td key={index}><img id={index} onClick={props.clickCheck} className="resize clock" src={row.pic} alt={index}></img></td>
     
                 )
 
             }
 
         }
+
+        return rows;
 
     });
 

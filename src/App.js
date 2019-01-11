@@ -20,7 +20,9 @@ class App extends Component {
 
     score: 0,
 
-    topScore: 0
+    topScore: 0,
+
+    clicked: false
 
   };
 
@@ -30,9 +32,12 @@ class App extends Component {
 
     event.preventDefault();
 
-    console.log(event);
-    //click={this.handleClick}
+    console.log("EVENT IS", event);
 
+    this.setState({clicked: true});
+
+    console.log(this.state);
+    
   }
 
   render() {
@@ -41,7 +46,7 @@ class App extends Component {
 
       <div className="App-header">
       
-        <Grid imgData={this.pics} />
+        <Grid imgData={this.pics} clickCheck={this.handleClick}/>
       
       </div>
 

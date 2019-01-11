@@ -10,22 +10,23 @@ const GridBodyUp = props => {
 
                 return (
 
-                    <td key={index}><img onClick={console.log("click")} className="resize anti" src={row.pic} alt={index}></img></td>
+                    <td key={index}><img id={index} onClick={props.clickCheck} className="resize anti" src={row.pic} alt={index}></img></td>
     
                 )
 
             } else {
 
-
                 return (
 
-                    <td key={index}><img className="resize clock" src={row.pic} alt={index}></img></td>
+                    <td key={index}><img id={index} onClick={props.clickCheck} className="resize clock" src={row.pic} alt={index}></img></td>
     
                 )
 
             }
 
         } 
+
+        return rows;
 
     });
 
