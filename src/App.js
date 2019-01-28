@@ -65,6 +65,8 @@ class App extends Component {
 
   handleClick = event => {
 
+    console.log("click");
+
     event.preventDefault();
 
     let click = event.target.id;
@@ -75,18 +77,16 @@ class App extends Component {
 
   updateClick = targ => {
 
-    console.log(this.state);
-    
+    //parse id into num
     let numTarg = parseInt(targ);
 
+    //find corresponding obj within state array of all objs
     let selected = this.state.picts[numTarg];
 
-    console.log(selected);
-
-    console.log(selected.clicked);
-
+    //check if corresponding obj clicked val is false
     if (selected.clicked === false) {
 
+      //if so, set state and change that corresponding obj' click val to true and add a point
       this.setState(prevState=>{
 
         prevState.picts[numTarg].clicked = true;
@@ -105,17 +105,32 @@ class App extends Component {
       //console.log("SHUFFLED?", this.state.picts);
       
     } else {
+
+      //else run lose game method
+
       this.loseGame();
+
     }
 
   };
 
   loseGame = () => {
+
     console.log("YOU LOSE");
 
+    //set state to initial val
     this.setState(prevState=>{
 
-      prevState.topScore = prevState.score;
+      //set top score to prev game score
+      if (prevState.topScore < prevState.score) {
+
+        prevState.topScore = prevState.score;
+
+      } else {
+
+        prevState.topScore = prevState.topScore;
+
+      }
 
       prevState.score = 0;
       
