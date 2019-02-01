@@ -2,7 +2,9 @@ import React from 'react';
 
 const GridBodyLow = props => {
 
-    const rows = props.imgData.map((row, index) => {
+    let rows = props.imgData.map((row, index) => {
+
+        //console.log("LOW", row);
 
         if (index >= 8) {
 

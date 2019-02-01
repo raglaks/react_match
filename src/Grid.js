@@ -4,18 +4,43 @@ import GridBodyMid from "./GridBodyMid";
 import GridBodyLow from "./GridBodyLow";
 
 class Grid extends Component {
+
+  constructor(props) {
+
+    super(props);
+
+    this.state = {
+
+      picts: [],
+      func: {}
+
+    };
+  }
+
+  componentDidMount(){
+
+    this.setState({
+
+      picts: this.props.imgData,
+
+    });
+
+    // console.log("GRID PROPS", this.props);
+
+    // console.log("GRID STATE", this.state);
+
+  }
+
   render() {
-    const { imgData } = this.props;
-    const { clickCheck } = this.props;
 
     return (
       <table>
         <tbody>
-          <GridBodyUp imgData={imgData} clickCheck={clickCheck}/>
+          <GridBodyUp imgData={this.state.picts} clickCheck={this.props.clickCheck}/>
 
-          <GridBodyMid imgData={imgData} clickCheck={clickCheck}/>
+          <GridBodyMid imgData={this.state.picts} clickCheck={this.props.clickCheck}/>
 
-          <GridBodyLow imgData={imgData} clickCheck={clickCheck}/>
+          <GridBodyLow imgData={this.state.picts} clickCheck={this.props.clickCheck}/>
         </tbody>
       </table>
     );

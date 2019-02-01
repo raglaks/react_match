@@ -2,7 +2,9 @@ import React from 'react';
 
 const GridBodyMid = props => {
 
-    const rows = props.imgData.map((row, index) => {
+    let rows = props.imgData.map((row, index) => {
+
+        //console.log("MID", row);
 
         if (index >= 4 && index <= 7) {
 

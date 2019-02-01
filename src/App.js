@@ -15,30 +15,42 @@ import eye12 from "./images/eye12.jpg";
 import "./App.css";
 
 class App extends Component {
-  state = {
-    score: 0,
 
-    topScore: 0,
+  constructor(props) {
+    super(props);
 
-    picts: [
-      { pic: eye1, id: 0, clicked: false },
-      { pic: eye2, id: 1, clicked: false },
-      { pic: eye3, id: 2, clicked: false },
-      { pic: eye4, id: 3, clicked: false },
-      { pic: eye5, id: 4, clicked: false },
-      { pic: eye6, id: 5, clicked: false },
-      { pic: eye7, id: 6, clicked: false },
-      { pic: eye8, id: 7, clicked: false },
-      { pic: eye9, id: 8, clicked: false },
-      { pic: eye10, id: 9, clicked: false },
-      { pic: eye11, id: 10, clicked: false },
-      { pic: eye12, id: 11, clicked: false }
-    ]
-  };
+    this.state = {
+      score: 0,
+  
+      topScore: 0,
+  
+      picts: [
+        { pic: eye1, id: 0, clicked: false },
+        { pic: eye2, id: 1, clicked: false },
+        { pic: eye3, id: 2, clicked: false },
+        { pic: eye4, id: 3, clicked: false },
+        { pic: eye5, id: 4, clicked: false },
+        { pic: eye6, id: 5, clicked: false },
+        { pic: eye7, id: 6, clicked: false },
+        { pic: eye8, id: 7, clicked: false },
+        { pic: eye9, id: 8, clicked: false },
+        { pic: eye10, id: 9, clicked: false },
+        { pic: eye11, id: 10, clicked: false },
+        { pic: eye12, id: 11, clicked: false }
+      ]
+    };
+  }
+  
 
   componentDidMount() {
 
-    console.log(this.state.picts);
+    console.log("MOUNT:", this.state);
+
+  }
+
+  componentDidUpdate() {
+
+    console.log("STATE UPDATED:", this.state);
 
   }
 
@@ -65,8 +77,6 @@ class App extends Component {
 
   handleClick = event => {
 
-    console.log("click");
-
     event.preventDefault();
 
     let click = event.target.id;
@@ -75,39 +85,48 @@ class App extends Component {
 
   };
 
+  changeArr(array, index) {
+
+    let newScore = this.state.score;
+
+    newScore++;
+
+    array[index].clicked = true;
+
+    this.shuffle(array);
+
+    this.setState({
+
+      picts: array,
+      score: newScore
+
+    });
+
+    console.log("SHUFFLED", this.state);
+
+  }
+
   updateClick = targ => {
 
     //parse id into num
     let numTarg = parseInt(targ);
 
+    //current state array
+    let arr = this.state.picts;
+
     //find corresponding obj within state array of all objs
     let selected = this.state.picts[numTarg];
+
+    console.log(selected);
 
     //check if corresponding obj clicked val is false
     if (selected.clicked === false) {
 
-      //if so, set state and change that corresponding obj' click val to true and add a point
-      this.setState(prevState=>{
+      this.changeArr(arr, numTarg);
 
-        prevState.picts[numTarg].clicked = true;
-        prevState.score++;
-
-      });
-
-      //console.log(this.state);
-
-      // this.setState(prevState=>{
-
-      //   prevState.picts = this.shuffle(prevState.picts);
-
-      // });
-
-      //console.log("SHUFFLED?", this.state.picts);
-      
     } else {
 
       //else run lose game method
-
       this.loseGame();
 
     }
@@ -128,6 +147,7 @@ class App extends Component {
 
       } else {
 
+        // eslint-disable-next-line
         prevState.topScore = prevState.topScore;
 
       }
@@ -154,12 +174,14 @@ class App extends Component {
   };
 
   render() {
+
     return (
       <div className="App-header">
         <Grid imgData={this.state.picts} clickCheck={this.handleClick} />
       </div>
     );
   }
+
 }
 
 export default App;

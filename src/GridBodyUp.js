@@ -2,7 +2,9 @@ import React from 'react';
 
 const GridBodyUp = props => {
 
-    const rows = props.imgData.map((row, index) => {
+    let rows = props.imgData.map((row, index) => {
+
+        //console.log("UP", row);
 
         if (index <= 3) {
 
