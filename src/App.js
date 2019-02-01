@@ -19,10 +19,31 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      score: 0,
+    this.state = {};
+  }
   
-      topScore: 0,
+
+  componentDidMount() {
+
+    console.log("MOUNT:", this.state);
+
+    this.startGame(0);
+
+  }
+
+  componentDidUpdate() {
+
+    console.log("STATE UPDATED:", this.state);
+
+  }
+
+  startGame(top) {
+
+    this.setState({
+
+      score: 0,
+
+      topScore: top,
   
       picts: [
         { pic: eye1, id: 0, clicked: false },
@@ -38,19 +59,8 @@ class App extends Component {
         { pic: eye11, id: 10, clicked: false },
         { pic: eye12, id: 11, clicked: false }
       ]
-    };
-  }
-  
 
-  componentDidMount() {
-
-    console.log("MOUNT:", this.state);
-
-  }
-
-  componentDidUpdate() {
-
-    console.log("STATE UPDATED:", this.state);
+    });
 
   }
 
@@ -137,40 +147,16 @@ class App extends Component {
 
     console.log("YOU LOSE");
 
-    //set state to initial val
-    this.setState(prevState=>{
+    if (this.state.topScore < this.state.score) {
 
-      //set top score to prev game score
-      if (prevState.topScore < prevState.score) {
+      this.startGame(this.state.score);
 
-        prevState.topScore = prevState.score;
+    } else {
 
-      } else {
+      this.startGame(this.state.topScore)
 
-        // eslint-disable-next-line
-        prevState.topScore = prevState.topScore;
+    }
 
-      }
-
-      prevState.score = 0;
-      
-      prevState.picts = [
-        { pic: eye1, id: 0, clicked: false },
-        { pic: eye2, id: 1, clicked: false },
-        { pic: eye3, id: 2, clicked: false },
-        { pic: eye4, id: 3, clicked: false },
-        { pic: eye5, id: 4, clicked: false },
-        { pic: eye6, id: 5, clicked: false },
-        { pic: eye7, id: 6, clicked: false },
-        { pic: eye8, id: 7, clicked: false },
-        { pic: eye9, id: 8, clicked: false },
-        { pic: eye10, id: 9, clicked: false },
-        { pic: eye11, id: 10, clicked: false },
-        { pic: eye12, id: 11, clicked: false }
-      ]
-    });
-
-    console.log(this.state);
   };
 
   render() {
