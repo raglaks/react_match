@@ -1,68 +1,11 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Eyes
 
-## Available Scripts
+Eyes is a React web-app created for my web development bootcamp. To build it, I used React.js. It's a simple memory game that displays an array of images and when one is clicked, the images shuffle around. The objective is to click all of the images without clicking one twice. _(As I'm writing this, I have realized that I haven't included a "win" method to the game--probably because of how hard it is to win. If you actually win the game, please raise an issue and I will gladly fix the code. Good luck.)_
 
-In the project directory, you can run:
+This was a very challenging build because I was completely new to React. But I learned a great deal about how powerful this library is for front-end development. Initially, I couldn't understand the importance of the state and props. I would try to hard code a state into each component, which obviously turned out disastrous. Once I began to read and fully understand React's clear documenation, I managed to slowly build the game.
 
-### `npm start`
+One of my most important takeaways from this experience is the React Component Lifecycle. As most experienced React developers already know, the Component Lifecycle is a crucial part of React apps. There's a structure to what renders first and what re-renders when. But once you grasp this, creating React apps becomes a breeze.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Another conclusion from this build is that I have once again been drawn to front-end development. Throughout the middle and end parts of my bootcamp, I was heavily-drawn to back-end development because of Node.js and Express.js. I found Handlebars.js--a basic templating library that we used before learning React--very difficult and non-coder friendly. But React has opened a whole world of UX/UI potential to my short coding career. I hope to keep exploring it in future projects.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[Click here to play the game.](https://raglaks.github.io/react_match/)
