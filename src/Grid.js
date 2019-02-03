@@ -25,9 +25,22 @@ class Grid extends Component {
 
     });
 
-    // console.log("GRID PROPS", this.props);
+  }
 
-    // console.log("GRID STATE", this.state);
+  componentDidUpdate() {
+
+    console.log("GRID STATE UPDATED", this.state.picts);
+
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log("NEW PROPS BRO", nextProps);
+
+    this.setState({
+
+      picts: nextProps.imgData
+
+    });
 
   }
 

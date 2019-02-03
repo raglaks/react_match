@@ -17,27 +17,50 @@ import "./App.css";
 class App extends Component {
 
   constructor(props) {
+
     super(props);
 
-    this.state = {};
+    //set initial state so that components load
+    this.state = {
+
+      score: 0,
+
+      topScore: 0,
+  
+      picts: [
+        { pic: eye1, id: 0, clicked: false },
+        { pic: eye2, id: 1, clicked: false },
+        { pic: eye3, id: 2, clicked: false },
+        { pic: eye4, id: 3, clicked: false },
+        { pic: eye5, id: 4, clicked: false },
+        { pic: eye6, id: 5, clicked: false },
+        { pic: eye7, id: 6, clicked: false },
+        { pic: eye8, id: 7, clicked: false },
+        { pic: eye9, id: 8, clicked: false },
+        { pic: eye10, id: 9, clicked: false },
+        { pic: eye11, id: 10, clicked: false },
+        { pic: eye12, id: 11, clicked: false }
+      ]
+
+    };
   }
   
-
+  //check state when component mounts
   componentDidMount() {
 
     console.log("MOUNT:", this.state);
 
-    this.startGame(0);
-
   }
 
+  //check state each time component update (state change)
   componentDidUpdate() {
 
     console.log("STATE UPDATED:", this.state);
 
   }
 
-  startGame(top) {
+  //method to reset state but keep top score
+  startGame = (top) => {
 
     this.setState({
 
@@ -64,6 +87,7 @@ class App extends Component {
 
   }
 
+  //method to shuffle array of pics
   shuffle = (arr) => {
 
       let currentIndex = arr.length;
@@ -85,12 +109,14 @@ class App extends Component {
 
   }
 
+  //event handler for clicks
   handleClick = event => {
 
     event.preventDefault();
 
     let click = event.target.id;
 
+    //runs update click method to evaluate loss and shuffle
     this.updateClick(click);
 
   };
@@ -145,7 +171,7 @@ class App extends Component {
 
   loseGame = () => {
 
-    console.log("YOU LOSE");
+    console.log("YOU LOSE", this.state);
 
     if (this.state.topScore < this.state.score) {
 
