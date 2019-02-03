@@ -13,6 +13,7 @@ import eye10 from "./images/eye10.jpg";
 import eye11 from "./images/eye11.jpg";
 import eye12 from "./images/eye12.jpg";
 import "./App.css";
+import ScoreGrid from "./ScoreGrid";
 
 class App extends Component {
 
@@ -189,6 +190,7 @@ class App extends Component {
 
     return (
       <div className="App-header">
+        <ScoreGrid score={this.state.score} topScore={this.state.topScore}/>
         <Grid imgData={this.state.picts} clickCheck={this.handleClick} />
       </div>
     );

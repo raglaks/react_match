@@ -47,15 +47,17 @@ class Grid extends Component {
   render() {
 
     return (
-      <table>
-        <tbody>
-          <GridBodyUp imgData={this.state.picts} clickCheck={this.props.clickCheck}/>
 
-          <GridBodyMid imgData={this.state.picts} clickCheck={this.props.clickCheck}/>
+        <table>
+          <tbody>
+            <GridBodyUp imgData={this.state.picts} clickCheck={this.props.clickCheck}/>
 
-          <GridBodyLow imgData={this.state.picts} clickCheck={this.props.clickCheck}/>
-        </tbody>
-      </table>
+            <GridBodyMid imgData={this.state.picts} clickCheck={this.props.clickCheck}/>
+
+            <GridBodyLow imgData={this.state.picts} clickCheck={this.props.clickCheck}/>
+          </tbody>
+        </table>
+
     );
   }
 }
