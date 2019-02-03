@@ -147,6 +147,12 @@ class App extends Component {
 
   updateClick = targ => {
 
+    this.setState({
+
+      loser: false
+
+    });
+
     //parse id into num
     let numTarg = parseInt(targ);
 
