@@ -86,8 +86,6 @@ class App extends Component {
         { pic: eye12, id: 11, clicked: false }
       ],
 
-      loser: false
-
     });
 
   }
@@ -206,7 +204,7 @@ class App extends Component {
 
       if (props.loser === true) {
 
-        message = <h1>LOSER</h1>;
+        message = <h1 style={{color: "red"}}>LOSER</h1>;
 
       } else {
 
