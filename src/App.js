@@ -41,7 +41,9 @@ class App extends Component {
         { pic: eye10, id: 9, clicked: false },
         { pic: eye11, id: 10, clicked: false },
         { pic: eye12, id: 11, clicked: false }
-      ]
+      ],
+
+      loser: false
 
     };
   }
@@ -82,7 +84,9 @@ class App extends Component {
         { pic: eye10, id: 9, clicked: false },
         { pic: eye11, id: 10, clicked: false },
         { pic: eye12, id: 11, clicked: false }
-      ]
+      ],
+
+      loser: false
 
     });
 
@@ -172,6 +176,12 @@ class App extends Component {
 
   loseGame = () => {
 
+    this.setState({
+
+      loser: true
+
+    });
+
     console.log("YOU LOSE", this.state);
 
     if (this.state.topScore < this.state.score) {
@@ -188,8 +198,41 @@ class App extends Component {
 
   render() {
 
+    let Loser = (props) => {
+
+      console.log("LOSER PROPS", props);
+
+      let message;
+
+      if (props.loser === true) {
+
+        message = <h1>LOSER</h1>;
+
+      } else {
+
+        message = <span></span>;
+
+      }
+
+      return(
+
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                {message}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      )
+
+    }
+
     return (
-      <div className="App-header">
+      <div className="App-header fonts">
+        <Loser loser={this.state.loser}/>
         <ScoreGrid score={this.state.score} topScore={this.state.topScore}/>
         <Grid imgData={this.state.picts} clickCheck={this.handleClick} />
       </div>
